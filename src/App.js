@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [currentMessage, setCurrentMessage] = useState('');
@@ -14,13 +15,67 @@ function App() {
     "Obecnie jaja Antosia są małe jak okruszek 🍞",
     "Jaja Antosia mają rozmiar punktu na końcu zdania .",
     "Dziś jaja Antosia są jak mikroskopijny pyłek 🔬",
-    "Jaja Antosia są małe jak łuska od ryby 🐟"
+    "Jaja Antosia są małe jak łuska od ryby 🐟",
+    "Jaja Antosia mają wielkość ziarnka pieprzu 🌶️",
+    "Dziś jaja Antosia są jak pestka z wiśni 🍒",
+    "Jaja Antosia są małe jak główka zapałki 🔥",
+    "Obecnie jaja Antosia mają rozmiar ziarnka grochu 🟢",
+    "Jaja Antosia są jak mały kamyczek 🪨",
+    "Dziś jaja Antosia są małe jak nasionko słonecznika 🌻",
+    "Jaja Antosia mają wielkość ziarnka ryżu 🍚",
+    "Obecnie jaja Antosia są jak mała perła 💎",
+    "Jaja Antosia są małe jak łezka dziecka 😢",
+    "Dziś jaja Antosia mają rozmiar kulki z długopisu ✏️",
+    "Jaja Antosia są jak małe ziarnko kawy ☕",
+    "Obecnie jaja Antosia są małe jak przycisk na koszuli 👔",
+    "Jaja Antosia mają wielkość drobnej monety 🪙",
+    "Dziś jaja Antosia są jak ziarnko kminku 🧄",
+    "Jaja Antosia są małe jak mały guzik 🔘",
+    "Obecnie jaja Antosia mają rozmiar ziarnka sezamu 🥯",
+    "Jaja Antosia są jak malutka bańka mydlana 🫧",
+    "Dziś jaja Antosia są małe jak ziarnko piasku na plaży 🏝️",
+    "Jaja Antosia mają wielkość małego kamienia 🗿",
+    "Obecnie jaja Antosia są jak ziarnko cukru 🍯",
+    "Jaja Antosia są małe jak kroplówka z kranu 🚰",
+    "Dziś jaja Antosia mają rozmiar małego paciorka 📿",
+    "Jaja Antosia są jak ziarnko kukurydzy 🌽",
+    "Obecnie jaja Antosia są małe jak punkcik na mapie 🗺️",
+    "Jaja Antosia mają wielkość małej kulki ze śniegu ❄️",
+    "Dziś jaja Antosia są jak ziarnko pieprzu cayenne 🌶️",
+    "Jaja Antosia są małe jak mała grudka soli 🧂",
+    "Obecnie jaja Antosia mają rozmiar małego żółwika 🐢",
+    "Jaja Antosia są jak ziarnko quinoa 🌾",
+    "Dziś jaja Antosia są małe jak mała kropla deszczu ☔",
+    "Jaja Antosia mają wielkość małego kryształka 💎",
+    "Obecnie jaja Antosia są jak ziarnko chia 🌱",
+    "Jaja Antosia są małe jak malutka śrubka ⚙️",
+    "Dziś jaja Antosia mają rozmiar małej perłowej kulki 🤍",
+    "Jaja Antosia są jak ziarnko amarantusa 🌺",
+    "Obecnie jaja Antosia są małe jak główka od agrafki 📎",
+    "Jaja Antosia mają wielkość małej tabletki 💊",
+    "Dziś jaja Antosia są jak ziarnko pęczaku 🌾",
+    "Jaja Antosia są małe jak mała kostka lodu 🧊",
+    "Obecnie jaja Antosia mają roziarm malej kuleczki plastiku ♻️",
+    "Jaja Antosia są jak ziarnko jagłania 🌾",
+    "Dziś jaja Antosia są małe jak końcówka pinezki 📌",
+    "Jaja Antosia mają wielkość małej perły syntetycznej 🦪",
+    "Obecnie jaja Antosia są jak ziarnko maku na bułce 🥐",
+    "Jaja Antosia są małe jak mały płatek śniegu ❄️",
+    "Dziś jaja Antosia mają rozmiar małej kulki z plastelinuy 🎨",
+    "Jaja Antosia są jak ziarnko kuminu 🫚",
+    "Obecnie jaja Antosia są małe jak główka od pinezki 🔶",
+    "Jaja Antosia mają wielkość małej kulki żelu 🫧",
+    "Dziś jaja Antosia są jak ziarnko gorczycy 🌻",
+    "Jaja Antosia są małe jak mała kulka z waty 🤍",
+    "Obecnie jaja Antosia mają rozmiar małego kryształu soli 🧂",
+    "Jaja Antosia są jak ziarnko lnu 🌾",
+    "Dziś jaja Antosia są małe jak główka malej śrubki 🔩",
+    "Jaja Antosia mają wielkość małej kuleczki z gliny 🏺"
   ];
 
   const checkSize = () => {
     setIsChecking(true);
     
-    // Symulujemy "sprawdzanie" przez 1.5 sekundy
     setTimeout(() => {
       const randomMessage = messages[Math.floor(Math.random() * messages.length)];
       setCurrentMessage(randomMessage);
@@ -29,100 +84,24 @@ function App() {
   };
 
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      fontFamily: "'Arial', sans-serif",
-      color: "white",
-      textAlign: "center",
-      padding: "2em"
-    }}>
-      <h1 style={{
-        fontSize: "3em",
-        marginBottom: "1em",
-        textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
-        animation: "fadeInUp 1s ease-out"
-      }}>
+    <div className="container">
+      <h1 className="title">
         Antoś ma małe jaja! 🥚
       </h1>
       
       <button 
+        className={`check-button ${isChecking ? 'checking' : ''}`}
         onClick={checkSize}
         disabled={isChecking}
-        style={{
-          background: isChecking ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.2)",
-          border: "2px solid rgba(255,255,255,0.4)",
-          color: "white",
-          padding: "15px 30px",
-          fontSize: "1.1em",
-          borderRadius: "25px",
-          cursor: isChecking ? "wait" : "pointer",
-          backdropFilter: "blur(10px)",
-          transition: "all 0.3s ease",
-          marginBottom: "2em",
-          fontWeight: "bold",
-          textShadow: "1px 1px 2px rgba(0,0,0,0.3)"
-        }}
-        onMouseOver={(e) => {
-          if (!isChecking) {
-            e.target.style.background = "rgba(255,255,255,0.3)";
-            e.target.style.transform = "translateY(-2px)";
-          }
-        }}
-        onMouseOut={(e) => {
-          if (!isChecking) {
-            e.target.style.background = "rgba(255,255,255,0.2)";
-            e.target.style.transform = "translateY(0)";
-          }
-        }}
       >
         {isChecking ? "Sprawdzam rozmiar... 🔍" : "Sprawdź jaki rozmiar mają jaja Antosia"}
       </button>
 
       {currentMessage && (
-        <div style={{
-          background: "rgba(255,255,255,0.15)",
-          padding: "20px 30px",
-          borderRadius: "15px",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(255,255,255,0.3)",
-          maxWidth: "500px",
-          fontSize: "1.3em",
-          fontWeight: "bold",
-          textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
-          animation: "slideIn 0.5s ease-out"
-        }}>
+        <div className="message-box">
           {currentMessage}
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: scale(0.8) translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }
